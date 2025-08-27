@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Calculator</title>
+  <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+  <!-- Main wrapper for the calculator UI -->
+  <div class="calculator">
+    <!-- The calculator display (disabled so users can't type directly) -->
+    <input type="text" id="display" disabled>
+    <!-- Container that holds all the calculator buttons in a grid -->
+    <div class="buttons">
+      <!-- Clear button: calls clearDisplay() when clicked -->
+      <button class="clear" onclick="clearDisplay()">C</button>
+      <!-- Backspace button: removes the last character -->
+      <button onclick="deleteLast()">⌫</button>
+      <!-- Percent button: appends the % character to the expression -->
+      <button onclick="appendValue('%')">%</button>
+      <!-- Divide button: shows ÷ but appends / (the JS division operator) -->
+      <button onclick="appendValue('/')">÷</button>
+
+      <!-- Number buttons: append their digit to the display value -->
+      <button onclick="appendValue('7')">7</button>
+      <button onclick="appendValue('8')">8</button>
+      <button onclick="appendValue('9')">9</button>
+      <!-- Multiply button: shows × but appends * (the JS multiplication operator) -->
+      <button onclick="appendValue('*')">×</button>
+
+      <button onclick="appendValue('4')">4</button>
+      <button onclick="appendValue('5')">5</button>
+      <button onclick="appendValue('6')">6</button>
+      <!-- Subtract button: shows minus symbol and appends '-' -->
+      <button onclick="appendValue('-')">−</button>
+
+      <button onclick="appendValue('1')">1</button>
+      <button onclick="appendValue('2')">2</button>
+      <button onclick="appendValue('3')">3</button>
+      <!-- Addition button: appends '+' -->
+      <button onclick="appendValue('+')">+</button>
+
+      <!-- Zero button: spans two columns (styled by .zero in CSS) -->
+      <button class="zero" onclick="appendValue('0')">0</button>
+      <!-- Decimal point button: appends '.' -->
+      <button onclick="appendValue('.')">.</button>
+      <!-- Equals button: evaluates the current expression -->
+      <button class="equal" onclick="calculate()">=</button>
+    </div>
+  </div>
+  <!-- Load the JavaScript that powers the calculator logic -->
+  <script src="calc.js"></script>
+</body>
+</html>

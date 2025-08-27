@@ -1,0 +1,84 @@
+/* Reset default margin/padding and make sizing include padding/border */
+* {
+  margin: 0;              /* Remove default outer spacing */
+  padding: 0;             /* Remove default inner spacing */
+  box-sizing: border-box; /* Include padding/border in element's total width/height */
+}
+
+/* Style the page background and center the calculator */
+body {
+  height: 100vh;                                  /* Full viewport height */
+  background: linear-gradient(135deg, #1e1e2f, #2a2a3d); /* Diagonal gradient background */
+  display: flex;                                  /* Use flexbox layout */
+  justify-content: center;                        /* Horizontally center content */
+  align-items: center;                            /* Vertically center content */
+  font-family: 'Segoe UI', sans-serif;            /* Smooth, modern font */
+}
+
+/* The calculator card with glassmorphism look */
+.calculator {
+  background: rgba(255, 255, 255, 0.05); /* Transparent white for glass effect */
+  backdrop-filter: blur(12px);           /* Apply blur behind the element (glass) */
+  padding: 20px;                         /* Inner spacing */
+  border-radius: 20px;                   /* Rounded corners */
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);/* Soft shadow for depth */
+  width: 320px;                          /* Fixed width for layout consistency */
+}
+
+/* The display screen where the expression/result appears */
+#display {
+  width: 100%;                                  /* Stretch across the card */
+  height: 60px;                                  /* Fixed height */
+  font-size: 1.8rem;                             /* Large text for readability */
+  text-align: right;                             /* Numbers align to the right */
+  padding: 10px;                                 /* Inner spacing for text */
+  border: none;                                  /* Remove default border */
+  border-radius: 12px;                           /* Rounded corners */
+  background: rgba(255, 255, 255, 0.1);          /* Semi-transparent background */
+  color: #fff;                                   /* White text */
+  margin-bottom: 15px;                           /* Space below the display */
+  box-shadow: inset 0 0 5px rgba(255,255,255,0.3);/* Subtle inner glow */
+}
+
+/* Grid container for arranging buttons in 4 columns */
+.buttons {
+  display: grid;                          /* Use CSS Grid for layout */
+  grid-template-columns: repeat(4, 1fr);  /* 4 equal-width columns */
+  gap: 12px;                              /* Space between buttons */
+}
+
+/* Base button style for all buttons */
+button {
+  padding: 18px;                          /* Make buttons large and tappable */
+  font-size: 1.2rem;                      /* Readable text size */
+  border: none;                           /* No border outline */
+  border-radius: 50%;                     /* Make most buttons circular */
+  background: rgba(255,255,255,0.08);     /* Semi-transparent background */
+  color: #fff;                            /* White text */
+  cursor: pointer;                        /* Show pointer cursor on hover */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);  /* Drop shadow for depth */
+  transition: all 0.2s ease;              /* Smooth hover animations */
+}
+
+/* Hover effect for interactive feedback */
+button:hover {
+  background: rgba(255,255,255,0.15); /* Slightly brighter background */
+  transform: scale(1.05);             /* Subtle zoom-in on hover */
+}
+
+/* Special style for the Clear button (red text hinting caution) */
+.clear {
+  color: #ff6b6b; /* Coral red text */
+}
+
+/* Special style for the Equals button (highlighted background) */
+.equal {
+  background: #4cafef; /* Bright blue background */
+  color: #fff;         /* Keep text white for contrast */
+}
+
+/* Make the 0 button span two columns and be pill-shaped */
+.zero {
+  grid-column: span 2; /* Take up two grid columns */
+  border-radius: 30px; /* Rounded rectangle (pill) */
+}
